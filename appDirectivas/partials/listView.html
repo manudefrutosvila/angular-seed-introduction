@@ -1,0 +1,30 @@
+<div ng-show="listIsShown()">
+
+	<h1>List view with directives</h1>
+
+	<p>{{welcome}} {{user.name}} {{user.surname}} </p>
+
+	<p>&gt; {{greet}}</p>
+
+	<input type="text" ng-model="greet" />
+	<button ng-click="saludar()">Saludar</button>
+
+	<h3>These are your pets:</h3>
+	<ul>
+		<li ng-repeat="animal in animals" ng-click="showAnimal()">{{animal.name}}</li>
+	</ul>
+
+	<br>
+
+	<div ng-controller="NestedController">
+		{{seeyou}} {{user.name}} {{user.surname}}
+	</div>
+
+	<br>
+</div>
+
+<div ng-show="detailIsShown()" my-detail>	
+
+	
+</div>
+

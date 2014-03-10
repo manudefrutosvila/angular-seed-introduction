@@ -1,0 +1,51 @@
+<div ng-show="listIsShown()">
+
+	<h1>List view</h1>
+
+	<p>{{welcome}} {{user.name}} {{user.surname}} </p>
+
+	<p>&gt; {{greet}}</p>
+
+	<input type="text" ng-model="greet" />
+	<button ng-click="saludar()">Saludar</button>
+
+	<h3>These are your pets:</h3>
+	<ul>
+		<li ng-repeat="animal in animals" ng-click="showAnimal()">{{animal.name}}</li>
+	</ul>
+
+	<br>
+
+	<div ng-controller="NestedController">
+		{{seeyou}} {{user.name}} {{user.surname}}
+	</div>
+
+	<br>
+</div>
+
+<div ng-show="detailIsShown()">
+	<h1>Animal detail:</h1>
+
+	<p>
+		<b>Name</b> : <input type="text" readonly ng-model="animalCopy.name" />
+		<br>
+		<b>Type</b> : <input type="text" ng-model="animalCopy.type" />
+		<br>
+		<b>Breed</b> : <input type="text" ng-model="animalCopy.breed" />
+		<br>
+		<b>Sex</b> : <input type="text" ng-model="animalCopy.sex" />
+
+		<br><br>Breed: {{animal.breed}}
+		<br>Breed copy: {{animalCopy.breed}}
+	</p>
+
+	<div>
+		<button ng-click="back()">Back</button> <button ng-click="save()">Save</button> <button ng-click="cancel()">Cancel</button>
+	</div>
+</div>
+
+<div ng-show="confirmIsShown()">
+	{{confirmQuestion}}
+	<br>
+	<button ng-click="cancel()">Discard</button> <button ng-click="save()">Save</button>
+</div>
